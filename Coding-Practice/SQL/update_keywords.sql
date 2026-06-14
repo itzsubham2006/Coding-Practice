@@ -15,10 +15,7 @@ update student
 delete from student
 	where marks<=68;
 
-CREATE TABLE IF NOT EXISTS department(
-	id INT PRIMARY KEY,
-	dept_name VARCHAR(50)
-);
+------------------------------------------------------------------------------------------------------------------------- 
 
 CREATE TABLE IF NOT EXISTS facaulties(
 	id INT PRIMARY KEY,
@@ -30,5 +27,37 @@ CREATE TABLE IF NOT EXISTS facaulties(
 );
 
 
+CREATE TABLE IF NOT EXISTS department(
+	id INT PRIMARY KEY,
+	dept_name VARCHAR(50)
+);
 
-SELECT * FROM student;
+insert into facaulties
+(id, name, dept_id)
+values
+(100, "RJP", 100),
+(101, "Nag", 101),
+(102, "SMD", 102);
+
+insert into department
+(id, dept_name)
+values
+(100, "Computer Science & Engineering (CSE)"),
+(101, "Instrumental Engineering (IE)"),
+(102, "Mechanical Enginerring (ME)"),
+(103, "Electronics & Communication Engineering (ECE)"),
+(104, "Food Engineering Techonogy (FET)");
+
+
+update department
+set id=109
+where id=101;
+
+alter table department
+add column age int;
+
+alter table facaulties
+rename to faculties;
+
+SELECT * FROM department;
+SELECT * FROM faculties;
