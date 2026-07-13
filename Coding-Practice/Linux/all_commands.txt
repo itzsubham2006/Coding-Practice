@@ -1,0 +1,15 @@
+
+ls -ltr  --> to view the permission of the scripts/files
+
+cat (file_name)       --> to view the file/script
+
+#!/bin/bash
+
+vi (var_name)  	--> to create the script
+
+bash (file_name)    --> to execute the script
+
+chmod +x (file_name)     ---> to change the mod of the script
+
+read -p "What is your name? - " name          --> Read name from the user
+

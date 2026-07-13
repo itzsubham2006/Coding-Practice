@@ -1,57 +1,39 @@
-import simpleGit from "simple-git";
-import jsonfile from "jsonfile";
-import moment from "moment";
-import random from "random";
+// import simpleGit from "simple-git";
+// import jsonfile from "jsonfile";
+// import moment from "moment";
 
-const git = simpleGit();
-const path = "./data.json";
+// const git = simpleGit();
+// const path = "./data.json";
 
-const TARGET_YEAR = 2023;
-let TOTAL_COMMITS = 1;
+// const makeCommit = async () => {
+//   // Set the commit date to 4 July 2026
+//   const date = moment("2026-07-04T12:00:00");
 
-const makeCommits = async () => {
+//   const data = {
+//     date: date.format(),
+//     message: "GitHub contribution"
+//   };
 
-  while (TOTAL_COMMITS > 0) {
+//   // Write data to the file
+//   await jsonfile.writeFile(path, data, {
+//     spaces: 2
+//   });
 
-    const date = moment()
-      .year(TARGET_YEAR)
-      .startOf("year")
-      .add(random.int(200, 364), "days");
+//   // Stage the file
+//   await git.add(path);
 
-    const commitsToday = Math.min(
-      random.int(1, 4),
-      TOTAL_COMMITS
-    );
+//   // Create the commit with the specified date
+//   await git.commit(
+//     `Commit on ${date.format("YYYY-MM-DD")}`,
+//     {
+//       "--date": date.format()
+//     }
+//   );
 
-    for (let i = 0; i < commitsToday; i++) {
+//   // Push to GitHub
+//   await git.push();
 
-      const data = {
-        date: date.format(),
-        index: i
-      };
+//   console.log("Commit created successfully!");
+// };
 
-      await jsonfile.writeFile(path, data, {
-        spaces: 2
-      });
-
-      await git.raw(["add", "-f", path]);
-
-      await git.commit(
-        `commit on ${date.format("YYYY-MM-DD")}`,
-        {
-          "--date": date.format()
-        }
-      );
-
-      TOTAL_COMMITS--;
-
-      await new Promise(resolve =>
-        setTimeout(resolve, 500)
-      );
-    }
-  }
-
-  await git.push();
-};
-
-makeCommits();
+// makeCommit().catch(console.error);
