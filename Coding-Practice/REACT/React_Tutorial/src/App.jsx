@@ -17,13 +17,10 @@ function App() {
       <h1>This is a fruit handler</h1>
       <h1>{fruit}</h1>
 
-      <button onClick={fruitHandler}>Change fruit name</button>
+      {/* <button onClick={fruitHandler}>Change fruit name</button> */}
+      <button onMouseOver={fruitHandler}>Hover me</button>
     </div>
   )
- 
-
-  
-  
 }
 
 
