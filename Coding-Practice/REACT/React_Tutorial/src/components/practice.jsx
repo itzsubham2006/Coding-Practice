@@ -22,10 +22,14 @@ export function Points(){
     )
 }
 
+const Onclicked = () => {
+    alert("Ahhhh...You clicked me")
+}
+
 export function Click(){
     return(
         <div>
-            <button onClick={''}>Click me</button>
+            <button onClick={Onclicked}>Click me</button>
         </div>
     )
 }

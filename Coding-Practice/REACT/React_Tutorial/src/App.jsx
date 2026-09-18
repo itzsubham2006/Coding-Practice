@@ -1,24 +1,31 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
 import './App.css'
-import User from './user'
+import { useState } from 'react';
 
 function App() {
 
-  const [counter, statecounter] = useState(0)
+  const [fruit, setFruit] = useState("Apple");
 
-  return <>
-  <h1>Counter value : {counter}</h1>
-  <User/>
-  <button onClick={()=>statecounter(counter+1)}> Click me to increase</button>
-  <br />
-  <button onClick={()=>statecounter(counter-1)}>Click here to decrease</button>
+  const fruitHandler = () => {
+      if (fruit == "Apple"){
+        setFruit('Banana')
+      }
+      else setFruit('Apple')
+  }
 
-  <br />
-  <button onClick={()=>statecounter(0)}>Reset</button>
-  </>;
+  return(
+    <div>
+      <h1>This is a fruit handler</h1>
+      <h1>{fruit}</h1>
+
+      <button onClick={fruitHandler}>Change fruit name</button>
+    </div>
+  )
+ 
+
+  
+  
 }
+
+
 
 export default App

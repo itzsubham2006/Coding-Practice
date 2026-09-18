@@ -11,11 +11,11 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     {/* <Login></Login> */}
     {/* <Register></Register> */}
-    {/* <App /> */}
-    <Header></Header>
+    <App />
+    {/* <Header></Header>
     <Photos></Photos>
     <Points></Points>
-    <Click></Click>
-    
+    <Click></Click> */}
+
   </StrictMode>,
 )
